@@ -1,0 +1,12 @@
+#map-container {
+	height: 500px;
+	width: 800px;
+	border: 1px solid #ccc;
+	margin: 10px;
+}
+.contact-info {
+	margin-top: 20px;
+	margin-bottom: 60px;
+	font-weight: bold;
+	font-style: italic;
+}

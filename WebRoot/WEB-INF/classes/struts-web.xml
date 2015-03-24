@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+			"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="home" namespace="/" extends="struts-default">
+        <action name="*" class="com.jokerstation.webframe.action.web.HomeAction" method="{1}">
+            <result name="index">/home.jsp</result>
+            <result name="about">/web/about.jsp</result>
+            <result name="product">/web/product.jsp</result>
+            <result name="recruitment">/web/recruitment.jsp</result>
+            <result name="contact">/web/contact.jsp</result>
+        </action>
+    </package>
+</struts>

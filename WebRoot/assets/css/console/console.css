@@ -1,0 +1,71 @@
+body {
+	background-color: #FFF;
+}
+.header-container {
+	min-width: 900px;
+}
+.navbar {
+	background-color: #0a2540;
+    height: 130px;
+    padding-left: 50px;
+    border: 0;
+    border-radius: 0;
+    color: #FFF;
+    margin-bottom: 0;
+    display: none;
+}
+.navbar .navbar-header {
+	margin-top: 15px;
+	font-size: 30px;
+}
+.navbar .navbar-header p {
+	color: #FFF;
+	font-weight: bold;
+}
+/*
+ * 右边
+ */
+.navbar .collapse {
+	margin-top: 30px;
+	font-size: 20px;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #FFF;
+}
+.navbar-default .navbar-nav > li > a:HOVER, .navbar-default .navbar-nav > li > a:ACTIVE, .navbar-default .navbar-nav > li > a:FOCUS {
+	color: #FFFFCC;
+	background: none;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	background: none;
+	color: #FFFFCC;
+}
+/*
+ * 右边end
+ */
+ 
+/*
+ * 菜单
+ */
+.navbar .main-nav {
+	margin-left: 130px;
+	font-weight: bold;
+}
+.navbar .main-nav li.active a, .navbar .main-nav li a:HOVER {
+	background: none;
+	color: #FFFFCC;
+	text-shadow: 0px 0px 10px #FFFFCC;
+}
+
+
+.g-left {
+	width: 199px;
+	border-right: 1px solid #ccc;
+	float: left;
+}
+.g-left ul {
+	margin: 10px 5px;
+}
+.g-right {
+	float: right;
+}

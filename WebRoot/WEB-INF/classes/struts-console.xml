@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+			"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 登录校验 -->
+    <package name="consoleCheck" namespace="/console_check" extends="struts-default">
+        <action name="*" class="com.jokerstation.webframe.action.console.CheckAction" method="{1}">
+      		<result name="login">/consolecheck/login.jsp</result>
+      		<result name="index" type="redirectAction">
+	            <param name="actionName">index.do</param>
+				<param name="namespace">/console</param>
+	        </result>
+        </action>
+    </package>
+    <!-- 后台首页跳转,后台共用方法 -->
+    <package name="console" namespace="/console" extends="struts-default">
+        <action name="*" class="com.jokerstation.webframe.action.console.ConsoleAction" method="{1}">
+            <result name="index">/WEB-INF/console/index.jsp</result>
+        </action>
+    </package>
+    <!-- 站点设置 -->
+    <package name="websetting" namespace="/console/websetting" extends="struts-default">
+ 		<action name="*" class="com.jokerstation.webframe.action.console.WebSettingAction" method="{1}">
+             <result name="webSetting">/WEB-INF/console/websetting/websetting.jsp</result>
+             <result name="comm">/WEB-INF/console/websetting/comm.jsp</result>
+             <result name="links">/WEB-INF/console/websetting/links.jsp</result>
+             <result name="titleSet">/WEB-INF/console/websetting/titleset.jsp</result>
+		</action>
+	</package>
+	<!-- 首页 -->
+	<package name="webindex" namespace="/console/webindex" extends="struts-default">
+	    <action name="*" class="com.jokerstation.webframe.action.console.WebIndexAction" method="{1}">
+	        <result name="webIndex">/WEB-INF/console/webindex/webindex.jsp</result>
+	        <result name="setting">/WEB-INF/console/webindex/setting.jsp</result>
+	        <result name="carousel">/WEB-INF/console/webindex/carousel.jsp</result>
+	    </action>
+	</package>
+	<!-- 联系我们 -->
+	<package name="contact" namespace="/console/contact" extends="struts-default">
+	    <action name="*" class="com.jokerstation.webframe.action.console.ContactAction" method="{1}">
+	        <result name="contact">/WEB-INF/console/contact/contact.jsp</result>
+	        <result name="info">/WEB-INF/console/contact/info.jsp</result>
+	        <result name="map">/WEB-INF/console/contact/map.jsp</result>
+	    </action>
+	</package>
+	<!-- 关于我们 -->
+	<package name="about" namespace="/console/about" extends="struts-default">
+		<action name="*" class="com.jokerstation.webframe.action.console.AboutAction" method="{1}">
+		    <result name="about">/WEB-INF/console/about/about.jsp</result>
+		    <result name="aboutSetting">/WEB-INF/console/about/setting.jsp</result>
+		    <result name="addAbout">/WEB-INF/console/about/edit.jsp</result>
+		    <result name="editAbout">/WEB-INF/console/about/edit.jsp</result>
+    	</action>
+	</package>
+	<!-- 产品介绍 -->
+	<package name="product" namespace="/console/product" extends="struts-default">
+	    <action name="*" class="com.jokerstation.webframe.action.console.ProductAction" method="{1}">
+	        <result name="product">/WEB-INF/console/product/product.jsp</result>
+	    </action>
+	</package>
+	<!-- 招聘 -->
+	<package name="recruitment" namespace="/console/recruitment" extends="struts-default">
+	    <action name="*" class="com.jokerstation.webframe.action.console.RecruitmentAction" method="{1}">
+	        <result name="category">/WEB-INF/console/recruitment/category.jsp</result>
+		    <result name="recruitment">/WEB-INF/console/recruitment/recruitment.jsp</result>
+		    <result name="list">/WEB-INF/console/recruitment/list.jsp</result>
+		    <result name="add">/WEB-INF/console/recruitment/edit.jsp</result>
+		    <result name="edit">/WEB-INF/console/recruitment/edit.jsp</result>
+    	</action>
+	</package>
+	<!-- 系统 -->
+	<package name="system" namespace="/console/system" extends="struts-default">
+	    <action name="*" class="com.jokerstation.webframe.action.console.SystemAction" method="{1}">
+	        <result name="system">/WEB-INF/console/system/system.jsp</result>
+	        <result name="changePwd">/WEB-INF/console/system/changepwd.jsp</result>
+	        <result name="log">/WEB-INF/console/system/log.jsp</result>
+	        <result name="userList">/WEB-INF/console/system/userlist.jsp</result>
+	        <result name="actionList">/WEB-INF/console/system/actionlist.jsp</result>
+	    </action>
+	</package>
+	
+	<!-- 其他 -->
+	<package name="other" namespace="/console/other" extends="struts-default">
+	    <action name="*" class="com.jokerstation.webframe.action.console.other.OtherAction" method="{1}">
+	        <result name="other">/WEB-INF/console/other/other.jsp</result>
+	    </action>
+	</package>
+	<package name="dynamic" namespace="/console/other/dynamic" extends="struts-default">
+	    <action name="*" class="com.jokerstation.webframe.action.console.other.DynamicAction" method="{1}">
+	        <result name="list">/WEB-INF/console/other/dynamic/list.jsp</result>
+	    </action>
+	</package>
+</struts>
