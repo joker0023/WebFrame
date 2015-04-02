@@ -1,12 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="/include/header.jsp" %>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/home.css">
     	<div class="main-content">
     		<c:if test="${null != data.carouselList}">
 	    		<div id="carousel-generic" class="carousel slide" data-ride="carousel">
 				  	<ol class="carousel-indicators">
-				    	<li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
-				    	<li data-target="#carousel-generic" data-slide-to="1"></li>
-				    	<li data-target="#carousel-generic" data-slide-to="2"></li>
+				  		<c:forEach items="${data.carouselList }" var="carousel" varStatus="status">
+				  			<li data-target="#carousel-generic" data-slide-to="${status.index }" class="${status.index==0 ? 'active' : '' }"></li>
+				  		</c:forEach>
 					</ol>
 				
 					<div class="carousel-inner" role="listbox">
@@ -35,8 +36,31 @@
     		</c:if>
     		
     		<div class="index-content">
-    		
+    			<div class="container-fluid">
+    				<div class="row">
+    					<div class="dynamic-container col-xs-6 col-sm-6 col-md-5">
+    						<h4>最新动态:</h4>
+    						<table class="table">
+    							<c:forEach items="${data.dynamicList }" var="dynamic" varStatus="status">
+    								<tr>
+    									<td>
+    										<a href="javascript:void(0);" title="${dynamic.title }" class="${dynamic.type == 1 ? 'note' : ''}">${dynamic.title }</a>
+    									</td>
+    								</tr>
+    							</c:forEach>
+    						</table>
+    					</div>
+    					<div class="more-content col-xs-6 col-sm-6 col-md-7">
+    						<div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
     		</div>
     	</div>
-    	
+    	<script type="text/javascript">
+    		$(function(){
+    			$(".dynamic-container td a").width($(".dynamic-container").width() - 50);
+    		});
+    	</script>
 <%@ include file="/include/footer.jsp" %>

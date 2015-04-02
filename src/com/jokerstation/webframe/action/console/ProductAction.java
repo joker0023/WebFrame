@@ -22,6 +22,7 @@ public class ProductAction extends BaseAction {
 	 * @return
 	 */
 	public String product() {
+		setAttribute("menu", "product");
 		return PRODUCT;
 	}
 }

@@ -72,7 +72,7 @@ public class PasswordUtil {
 	 * @return
 	 * @throws NoSuchAlgorithmException 
 	 */
-	public static String MD5(String content) throws NoSuchAlgorithmException{
+	public static String MD5(String content) throws Exception{
 		return encrypt(content, CRYPT_MD5);
 	}
 	
@@ -82,7 +82,7 @@ public class PasswordUtil {
 	 * @return
 	 * @throws NoSuchAlgorithmException 
 	 */
-	public static String SHA1(String content) throws NoSuchAlgorithmException{
+	public static String SHA1(String content) throws Exception{
 		return encrypt(content, CRYPT_SHA1);
 	}
 	
@@ -93,9 +93,9 @@ public class PasswordUtil {
 	 * @return
 	 * @throws NoSuchAlgorithmException 
 	 */
-	public static String encrypt(String content, String cryptType) throws NoSuchAlgorithmException{
+	public static String encrypt(String content, String cryptType) throws Exception{
 		MessageDigest messageDigest = MessageDigest.getInstance(cryptType);
-		byte[] bytes = messageDigest.digest(content.getBytes());
+		byte[] bytes = messageDigest.digest(content.getBytes(ENCODE));
 		return byteToHex(bytes);
 	}
 	
@@ -107,12 +107,12 @@ public class PasswordUtil {
 	 * @throws InvalidKeyException
 	 * @throws NoSuchAlgorithmException
 	 */
-	public static String HMAC_MD5(String content, String key) throws InvalidKeyException, NoSuchAlgorithmException{
+	public static String HMAC_MD5(String content, String key) throws Exception{
 		String HMAC_MD5 = "HmacMD5";
-		SecretKeySpec signKey = new SecretKeySpec(key.getBytes(), HMAC_MD5);
+		SecretKeySpec signKey = new SecretKeySpec(key.getBytes(ENCODE), HMAC_MD5);
 		Mac mac = Mac.getInstance(HMAC_MD5);
 		mac.init(signKey);
-		byte[] bytes = mac.doFinal(content.getBytes());
+		byte[] bytes = mac.doFinal(content.getBytes(ENCODE));
 		return byteToHex(bytes);
 	}
 	
@@ -126,9 +126,9 @@ public class PasswordUtil {
 	public static String AESEncrypt(String content, String key) throws Exception{
 		SecretKeySpec signKey = getKey(key);
 		Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-		IvParameterSpec iv = new IvParameterSpec("0102030405060708".getBytes());
+		IvParameterSpec iv = new IvParameterSpec("0102030405060708".getBytes(ENCODE));
 		cipher.init(Cipher.ENCRYPT_MODE, signKey, iv);
-		byte[] encrypted = cipher.doFinal(content.getBytes());
+		byte[] encrypted = cipher.doFinal(content.getBytes(ENCODE));
 		return byteToHex(encrypted);
 	}
 	
@@ -142,7 +142,7 @@ public class PasswordUtil {
 	public static String AESDecrypt(String content, String key) throws Exception{
 		SecretKeySpec signKey = getKey(key);
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-        IvParameterSpec iv = new IvParameterSpec("0102030405060708".getBytes());
+        IvParameterSpec iv = new IvParameterSpec("0102030405060708".getBytes(ENCODE));
         cipher.init(Cipher.DECRYPT_MODE, signKey, iv);
         byte[] encrypted1 = hexToByte(content);
 
@@ -155,7 +155,7 @@ public class PasswordUtil {
 	 * 建立AES的密钥
 	 */
 	private static SecretKeySpec getKey(String key) throws Exception {
-		byte[] arrBTmp = key.getBytes();
+		byte[] arrBTmp = key.getBytes(ENCODE);
 		byte[] arrB = new byte[16]; // 创建一个空的16位字节数组（默认值为0）
 
 		for (int i = 0; i < arrBTmp.length && i < arrB.length; i++) {

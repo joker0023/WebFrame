@@ -39,6 +39,48 @@ public class WebUtil {
 	 * HTTP的post方法
 	 * @param url
 	 * @param params
+	 * @return
+	 * @throws Exception
+	 */
+	public static String simpleDoPost(String url, Map<String, String> params) throws Exception {
+		String resp = null;
+		
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		
+		RequestConfig.Builder reqConfigBuilder = RequestConfig.custom();
+		reqConfigBuilder.setConnectTimeout(connectTimeout);
+		reqConfigBuilder.setSocketTimeout(readTimeout);
+		reqConfigBuilder.setExpectContinueEnabled(false);
+		
+		HttpPost post = new HttpPost(url);
+		post.setConfig(reqConfigBuilder.build());
+    	
+    	if (null != params) {
+    		List<NameValuePair> parameters = new ArrayList<NameValuePair>();
+			NameValuePair pair = null;
+			String obj = null;
+			for (String key : params.keySet()) {
+				obj = params.get(key);
+				pair = new BasicNameValuePair(key, (String) obj);
+				parameters.add(pair);
+			}
+			HttpEntity entity = new UrlEncodedFormEntity(parameters, DEFAULT_CHARSET);
+			post.setEntity(entity);
+    	}
+    	
+    	try {
+    		resp = getResponseAsString(httpClient, post);
+		} catch (IOException e) {
+			throw e;
+		}
+		
+		return resp;
+	}
+	
+	/**
+	 * HTTP的post方法
+	 * @param url
+	 * @param params
 	 * @param headerMap
 	 * @return
 	 * @throws Exception
@@ -56,10 +98,10 @@ public class WebUtil {
 		HttpPost post = new HttpPost(url);
 		post.setConfig(reqConfigBuilder.build());
 		
-		String ctype = "application/x-www-form-urlencoded;charset=" + DEFAULT_CHARSET;
-		post.addHeader("Accept", "text/xml,text/javascript,text/html");
-    	post.addHeader("User-Agent", "TDZ TRADE API/Java " + System.getProperty("java.version"));
-    	post.addHeader("Content-Type", ctype);
+//		String ctype = "application/x-www-form-urlencoded;charset=" + DEFAULT_CHARSET;
+//		post.addHeader("Accept", "text/xml,text/javascript,text/html");
+//    	post.addHeader("User-Agent", "TDZ TRADE API/Java " + System.getProperty("java.version"));
+//    	post.addHeader("Content-Type", ctype);
     	if (null != headerMap) {
     		for (Map.Entry<String, String> entry : headerMap.entrySet()) {
     			post.addHeader(entry.getKey(), entry.getValue());

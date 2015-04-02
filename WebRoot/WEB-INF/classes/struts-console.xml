@@ -88,6 +88,8 @@
 	<package name="dynamic" namespace="/console/other/dynamic" extends="struts-default">
 	    <action name="*" class="com.jokerstation.webframe.action.console.other.DynamicAction" method="{1}">
 	        <result name="list">/WEB-INF/console/other/dynamic/list.jsp</result>
+	        <result name="add">/WEB-INF/console/other/dynamic/edit.jsp</result>
+	        <result name="edit">/WEB-INF/console/other/dynamic/edit.jsp</result>
 	    </action>
 	</package>
 </struts>

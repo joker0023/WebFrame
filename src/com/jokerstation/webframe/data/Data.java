@@ -25,6 +25,11 @@ public class Data {
 	//邮件发送配置
 	public static MailUtil mail;
 	
+	//短信发送配置
+	public static final String smsAppKey = "1167fc885383eb670387e351f62ac925";
+	
+	public static final String smsApiUrl = "http://yunpian.com/v1/sms/send.json";
+	
 	/*
 	 * 以下是网站的配置信息
 	 */

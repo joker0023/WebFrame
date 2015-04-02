@@ -1,0 +1,30 @@
+.dynamic-container {
+	padding: 0 20px;
+	border-right: 1px dashed #ccc;
+	margin: 20px 0;
+}
+.dynamic-container > h4 {
+	font-weight: bold;
+}
+.dynamic-container .table {
+	border-bottom: 1px solid #ccc;
+}
+.dynamic-container td a{
+	white-space: nowrap;
+ 	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	display: block;
+ 	color: #666;
+}
+.dynamic-container td a.note {
+	color: red;
+	font-weight: 600;
+}
+
+.more-content {
+	padding: 20px;
+}
+.more-content div {
+	border: 1px solid #ccc;
+	height: 400px;
+}

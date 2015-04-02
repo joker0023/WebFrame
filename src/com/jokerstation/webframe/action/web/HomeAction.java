@@ -8,10 +8,11 @@ import com.jokerstation.webframe.action.BaseAction;
 import com.jokerstation.webframe.dao.web.AboutDao;
 import com.jokerstation.webframe.dao.web.CarouselDao;
 import com.jokerstation.webframe.dao.web.ContactDao;
-import com.jokerstation.webframe.data.Data;
+import com.jokerstation.webframe.dao.web.DynamicDao;
 import com.jokerstation.webframe.vo.web.About;
 import com.jokerstation.webframe.vo.web.Carousel;
 import com.jokerstation.webframe.vo.web.Contact;
+import com.jokerstation.webframe.vo.web.Dynamic;
 
 /**
  * 各大页面的跳转
@@ -35,24 +36,20 @@ public class HomeAction extends BaseAction {
 	private static final String RECRUITMENT = "recruitment";
 	
 	/**
-	 * 设置头部数据
-	 */
-	private void serHeader() {
-		setAttribute("href", getRootHostUrl());
-		setAttribute("webName", Data.webName);
-	}
-	
-	/**
 	 * 跳转首页
 	 * @return
 	 */
 	public String index() {
 		try{
-			serHeader();
 			setAttribute("menu", "index");
 			List<Carousel> carouselList = new CarouselDao().listAllBySort();
 			if(null != carouselList && carouselList.size() > 0){
 				setAttribute("carouselList", carouselList);
+			}
+			
+			List<Dynamic> dynamicList = new DynamicDao().list(null, 1, 10);
+			if(null != dynamicList && dynamicList.size() > 0){
+				setAttribute("dynamicList", dynamicList);
 			}
 		}catch (Exception e) {
 			logger.error("跳转首页出错", e);
@@ -67,7 +64,6 @@ public class HomeAction extends BaseAction {
 	 */
 	public String about() {
 		try{
-			serHeader();
 			setAttribute("menu", "about");
 			AboutDao aboutDao = new AboutDao();
 			List<About> list = aboutDao.listByShowIn();
@@ -84,7 +80,6 @@ public class HomeAction extends BaseAction {
 	 */
 	public String product() {
 		try{
-			serHeader();
 			setAttribute("menu", "product");
 			
 		}catch (Exception e) {
@@ -100,7 +95,6 @@ public class HomeAction extends BaseAction {
 	 */
 	public String recruitment() {
 		try{
-			serHeader();
 			setAttribute("menu", "recruitment");
 		}catch (Exception e) {
 			logger.error("跳转招聘页面出错", e);
@@ -115,7 +109,6 @@ public class HomeAction extends BaseAction {
 	 */
 	public String contact() {
 		try{
-			serHeader();
 			setAttribute("menu", "contact");
 			Contact contact = new ContactDao().getOne();
 			setAttribute("contact", contact);

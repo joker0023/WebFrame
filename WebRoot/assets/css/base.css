@@ -17,6 +17,9 @@ a, a:FOCUS, a:ACTIVE:FOCUS, a.active:FOCUS{
 input[type="file"]:FOCUS,input[type="radio"]:FOCUS,input[type="checkbox"]:FOCUS {
 	outline: none;
 }
+.clear {
+	clear: both;
+}
 
 #alert-tip{
 	height: 40px;

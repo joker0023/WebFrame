@@ -10,3 +10,9 @@
 	font-weight: bold;
 	font-style: italic;
 }
+label {
+	max-width: none;
+}
+#map-container div, #map-container span {
+	box-sizing: content-box;
+}

@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="/include/header.jsp" %>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/about.css">
    	<div class="main-content">
    		<div class="left-menu">
    			<ul class="js-left-nav">

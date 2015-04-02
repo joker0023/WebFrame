@@ -28,13 +28,14 @@ public class ActionLogService {
 	 */
 	public static void recordAction(HttpServletRequest request) {
 		try{
-			final HttpServletRequest req = request;
-			new Thread(){
-				@Override
-				public void run() {
-					recordBtThread(req);
-				}
-			}.start();
+//			final HttpServletRequest req = request;
+//			new Thread(){
+//				@Override
+//				public void run() {
+//					recordBtThread(req);
+//				}
+//			}.start();
+			recordBtThread(request);
 		}catch (Exception e) {
 			logger.error("开线程记录用户行为出错", e);
 		}
@@ -82,7 +83,7 @@ public class ActionLogService {
 				//系统设置
 				systemRecord(request);
 			}else if(namespace.equals(contextPath + "/console/other/dynamic")){
-				//系统设置
+				//系统-动态设置
 				other_dynamicRecord(request);
 			}
 		}catch (Exception e) {
@@ -107,7 +108,6 @@ public class ActionLogService {
 			//登录
 			action = "登录";
 			account = request.getParameter("account");
-			System.out.println("account: " + account);
 			log(account, action, detail);
 			saveAction(account, action, detail, request);
 		}else if(path.startsWith("/logout" + extension)){
@@ -383,6 +383,19 @@ public class ActionLogService {
 		String action = null;
 		String detail = null;
 		
+		if(path.startsWith("/save" + extension)){
+			//保存
+			action = "保存动态";
+			detail = "id=" + request.getParameter("id") + ", title=" + request.getParameter("title");
+			log(account, action, detail);
+			saveAction(account, action, detail, request);
+		}else if(path.startsWith("/del" + extension)){
+			//删除
+			action = "删除动态";
+			detail = "id=" + request.getParameter("id");
+			log(account, action, detail);
+			saveAction(account, action, detail, request);
+		}
 	}
 
 	

@@ -60,6 +60,17 @@
 	</filter-mapping>
 	<!-- ACTION FILTER END -->
 	
+	<!-- API FILTER START -->
+	<filter>
+		<filter-name>ApiFilter</filter-name>
+		<filter-class>com.jokerstation.webframe.filter.ApiFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ApiFilter</filter-name>
+		<url-pattern>/api/*</url-pattern>
+	</filter-mapping>
+	<!-- API FILTER END -->
+	
 	<!-- IMPORT STRUTS2 FILTER START -->
 	<filter>
 		<filter-name>struts2</filter-name>

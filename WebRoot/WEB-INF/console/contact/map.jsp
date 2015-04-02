@@ -21,6 +21,9 @@
   				width: 800px;
   				height: 500px;
   			}
+  			#map-container div, #map-container span {
+				box-sizing: content-box;
+			}
   			.control {
   				padding: 10px 0;
   			}
