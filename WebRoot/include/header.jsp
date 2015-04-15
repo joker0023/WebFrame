@@ -1,22 +1,24 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<title>
-    		<c:if test="${data.menu == 'index'}">首页</c:if>
-    		<c:if test="${data.menu == 'about'}">关于我们</c:if>
-    		<c:if test="${data.menu == 'product'}">产品介绍</c:if>
-    		<c:if test="${data.menu == 'recruitment'}">诚聘英才</c:if>
-    		<c:if test="${data.menu == 'contact'}">联系我们</c:if>
+    		${data.webTitle}
     	</title>
-    	<meta content="" name="description">
-    	<meta content="" name="Keywords">
+    	<meta content="${data.description}" name="description">
+    	<meta content="${data.keywords}" name="keywords">
     	<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.css">
   		<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/base.css">
   		<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/index.css">
   		<script src="${pageContext.request.contextPath }/assets/js/jquery-1.10.2.min.js"></script>
+  		<style type="text/css">
+	  		
+  		</style>
 	</head>
   
   	<body>

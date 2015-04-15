@@ -4,7 +4,7 @@
 		<div class="footer">
 			<p>
   				<a href="${pageContext.request.contextPath }/index.do">首页</a>|
-				<a href="${pageContext.request.contextPath }/index.do">关于我们</a>|
+				<a href="${pageContext.request.contextPath }/about.do">关于我们</a>|
 				<a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备XXXXX号</a>
   			</p>
 			<c:if test="${null != sessionScope.linkList }">

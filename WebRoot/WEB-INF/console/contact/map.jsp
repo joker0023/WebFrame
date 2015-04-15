@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
 <html>
 	<head>
  		<meta charset="utf-8">
@@ -18,7 +19,7 @@
   			}
   			#map-container {
   				border: 1px solid #ccc;
-  				width: 800px;
+  				max-width: 800px;
   				height: 500px;
   			}
   			#map-container div, #map-container span {

@@ -10,7 +10,7 @@
 					</ul>
 	 			</div>
 	 			<div class="right-content">
-					<iframe id="mainIframe" name="mainIframe" style="overflow-x: hidden;border: 0" width="60%" src="${pageContext.request.contextPath }/console/other/dynamic/list.do" onload="loadComplete();">
+					<iframe id="mainIframe" name="mainIframe" frameborder="no" border="0" style="overflow-x: hidden;border: 0" width="60%" src="${pageContext.request.contextPath }/console/other/dynamic/list.do" onload="loadComplete();">
 						
 					</iframe>
 				</div>

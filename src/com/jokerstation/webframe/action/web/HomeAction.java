@@ -42,6 +42,7 @@ public class HomeAction extends BaseAction {
 	public String index() {
 		try{
 			setAttribute("menu", "index");
+			setAttribute("webTitle", "首页");
 			List<Carousel> carouselList = new CarouselDao().listAllBySort();
 			if(null != carouselList && carouselList.size() > 0){
 				setAttribute("carouselList", carouselList);
@@ -65,6 +66,7 @@ public class HomeAction extends BaseAction {
 	public String about() {
 		try{
 			setAttribute("menu", "about");
+			setAttribute("webTitle", "关于我们");
 			AboutDao aboutDao = new AboutDao();
 			List<About> list = aboutDao.listByShowIn();
 			setAttribute("list", list);
@@ -81,7 +83,7 @@ public class HomeAction extends BaseAction {
 	public String product() {
 		try{
 			setAttribute("menu", "product");
-			
+			setAttribute("webTitle", "产品介绍");
 		}catch (Exception e) {
 			logger.error("跳转产品介绍页面出错", e);
 		}
@@ -96,6 +98,7 @@ public class HomeAction extends BaseAction {
 	public String recruitment() {
 		try{
 			setAttribute("menu", "recruitment");
+			setAttribute("webTitle", "诚聘英才");
 		}catch (Exception e) {
 			logger.error("跳转招聘页面出错", e);
 		}
@@ -110,6 +113,7 @@ public class HomeAction extends BaseAction {
 	public String contact() {
 		try{
 			setAttribute("menu", "contact");
+			setAttribute("webTitle", "联系我们");
 			Contact contact = new ContactDao().getOne();
 			setAttribute("contact", contact);
 			if(null != contact && null != contact.getOther()){

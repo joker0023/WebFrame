@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
 <html>
 	<head>
  		<meta charset="utf-8">
@@ -36,7 +37,7 @@
   				<div class="form-group">
   					<label class="col-sm-3 control-label">其他信息: </label>
   					<div class="col-sm-9">
-  						<textarea class="form-control js-other" name="other" placeholder="其他一些信息" maxlength="500">${data.contact.other }</textarea>
+  						<textarea class="form-control js-other" rows="5" name="other" placeholder="其他一些信息" maxlength="500">${data.contact.other }</textarea>
   					</div>
   				</div>
   				<div class="form-group">

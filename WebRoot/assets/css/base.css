@@ -4,6 +4,8 @@ body {
     padding: 0;
     font-family: "宋体";
     font-size: 14px;
+    border: 0px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 *, *:HOVER, *:ACTIVE, *:FOCUS{
 	outline: none;

@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML>
 <html>
 	<head>
  		<meta charset="utf-8">
@@ -103,7 +104,7 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="6" style="background-color: #EEE;"></td>
+						<td colspan="5" style="background-color: #EEE;"></td>
 					</tr>
 				</tfoot>
 			</table>

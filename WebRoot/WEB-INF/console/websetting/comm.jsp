@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
 <html>
 	<head>
  		<meta charset="utf-8">
@@ -34,7 +35,7 @@
 	  					<tr>
 	  						<td>站点logo: </td>
 	  						<td>
-	  							<img class="js-logo-img" alt="" src="${pageContext.request.contextPath }/favicon.ico" title="ico格式的文件" oldSrc="${pageContext.request.contextPath }/favicon.ico">
+	  							<img class="js-logo-img" alt="站点logo" src="${pageContext.request.contextPath }/favicon.ico" title="ico格式的文件" oldSrc="${pageContext.request.contextPath }/favicon.ico">
 	  							<button class="btn btn-primary uploadBtn js-upload" title="请上传ico格式的文件" type="button">上传文件</button>
 	  							<input type="file" name="logo" style="display: none;">
 	  						</td>

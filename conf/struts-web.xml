@@ -11,4 +11,10 @@
             <result name="contact">/web/contact.jsp</result>
         </action>
     </package>
+    <package name="web_dynamic" namespace="/dynamic" extends="struts-default">
+        <action name="*" class="com.jokerstation.webframe.action.web.DynamicAction" method="{1}">
+            <result name="list">/web/dynamic/list.jsp</result>
+            <result name="detail">/web/dynamic/detail.jsp</result>
+        </action>
+    </package>
 </struts>

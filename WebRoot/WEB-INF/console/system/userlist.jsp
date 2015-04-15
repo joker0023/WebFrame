@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML>
 <html>
 	<head>
  		<meta charset="utf-8">
@@ -29,7 +30,7 @@
 	    		width: 150px;
 	    	}
 	    	.table td {
-	    		height: 48px;
+	    		
 	    	}
 	    	.table td input[type='text'] {
 	    		display: none;
@@ -37,6 +38,9 @@
 	    		padding-top: 3px;
 	    		padding-bottom: 3px;
 	    		height: 30px;
+	    	}
+	    	.td-control a {
+	    		margin-bottom: 5px;
 	    	}
   		</style>
   	</head>
@@ -47,11 +51,10 @@
   					<div class="form-group">
     					<input type="text" class="form-control" name="keyWord" placeholder="关键词" value="${data.keyWord }">
   					</div>
-  					<button type="submit" class="btn btn-primary">
-						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					</button> 
+  					<button type="submit" class="btn btn-primary">搜索</button> 
+					<a href="javascript:void(0);" class="btn btn-primary" id="js-add">增加</a>
   				</form>
-				<a href="javascript:void(0);" class="btn btn-primary" id="js-add">增加</a>
+				
 				<div class="new-container js-new">
 					<table>
 						<tr>
@@ -98,7 +101,7 @@
 									<span style="color:red;">禁用</span>
 								</c:if>
 							</td>
-							<td>
+							<td class="td-control">
 								<a href="javascript:void(0);" class="btn btn-danger btn-xs js-delete">删除</a>
 								<c:if test="${user.state == 1}">
 									<a href="javascript:void(0);" class="btn btn-danger btn-xs js-disable">禁用</a>

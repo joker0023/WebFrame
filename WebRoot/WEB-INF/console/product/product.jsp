@@ -12,7 +12,7 @@
 	 			<div class="right-content">
 	 				<h2>现在还什么都没有</h2>
 	 			<!-- 
-					<iframe id="mainIframe" name="mainIframe" style="overflow-x: hidden;border: 0" width="60%" src="${pageContext.request.contextPath }/console/product" onload="loadComplete();">
+					<iframe id="mainIframe" name="mainIframe" frameborder="no" border="0" style="overflow-x: hidden;border: 0" width="60%" src="${pageContext.request.contextPath }/console/product" onload="loadComplete();">
 						
 					</iframe>
 				 -->

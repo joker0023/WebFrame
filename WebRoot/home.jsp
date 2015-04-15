@@ -36,27 +36,11 @@
     		</c:if>
     		
     		<div class="index-content">
-    			<div class="container-fluid">
-    				<div class="row">
-    					<div class="dynamic-container col-xs-6 col-sm-6 col-md-5">
-    						<h4>最新动态:</h4>
-    						<table class="table">
-    							<c:forEach items="${data.dynamicList }" var="dynamic" varStatus="status">
-    								<tr>
-    									<td>
-    										<a href="javascript:void(0);" title="${dynamic.title }" class="${dynamic.type == 1 ? 'note' : ''}">${dynamic.title }</a>
-    									</td>
-    								</tr>
-    							</c:forEach>
-    						</table>
-    					</div>
-    					<div class="more-content col-xs-6 col-sm-6 col-md-7">
-    						<div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
+				<h4>
+					最新动态:
+					<a style="color: blue;" href="${pageContext.request.contextPath }/dynamic/list.do" target="_blank">更多</a>
+				</h4>
+			</div>
     	</div>
     	<script type="text/javascript">
     		$(function(){

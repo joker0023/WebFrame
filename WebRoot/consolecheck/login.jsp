@@ -3,6 +3,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>后台登录</title>
 		<link rel="shortcut icon" href="${pageContext.request.contextPath }/favicon.ico">
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.css">
@@ -71,10 +73,14 @@
 					<div class="form-group">
   						<input type="password" class="form-control" name="password" placeholder="密码" autocomplete="off">
 					</div>
+					<!--
 					<label class="checkbox">
 						<input type="checkbox" value="记住我">记住我
 					</label>
-					<button class="btn btn-lg btn-primary btn-block">登录</button>
+					-->
+					<div class="form-group">
+						<button class="btn btn-lg btn-primary btn-block">登录</button>
+					</div>
 				</div>
 			</form>
 		</div>

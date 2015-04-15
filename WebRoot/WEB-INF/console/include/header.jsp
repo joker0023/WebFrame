@@ -54,7 +54,12 @@
 				
 		    	//初始化iframe的宽度
 				var clientWidth = document.documentElement.clientWidth;
-				$("#mainIframe").width(clientWidth - 180);
+		    	var containerWidth = $("#container-fluid").width();
+		    	if(containerWidth > clientWidth){
+		    		$("#mainIframe").width(containerWidth - 180);
+		    	}else{
+		    		$("#mainIframe").width(clientWidth - 180);
+		    	}
 			}
 		</script>
   	</head>

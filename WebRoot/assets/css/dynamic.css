@@ -1,0 +1,84 @@
+.list-container {
+	min-height: 400px;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	padding-right: 0;
+	border-right: 0;
+}
+.list-footer {
+	border-bottom: 1px dotted #ccc;
+	margin-top: 50px;
+}
+.advertising-container {
+	display: none;
+}
+@media (min-width: 992px) {
+	.advertising-container {
+		display: block;
+		margin: 20px 0;
+		padding-left: 10px;
+		min-height: 400px;
+	}
+	.list-container {
+		padding-right: 50px;
+		border-right: 1px solid #ccc;
+	}
+}
+.breadcrumb a {
+	color: #337ab7;
+}
+.search-form-container {
+	height: 34px;
+}
+.list-container .dynamic-list li {
+	display: block;
+	height: 18px;
+	margin: 20px 10px;
+	overflow: hidden;
+}
+.list-container a.article {
+	color: #3366FF;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+}
+.list-container li .time {
+	color: rgba(0,0,0,0.2);
+	font-style: italic;
+	padding-left: 30px;
+	display: none;
+	float: left;
+}
+.list-container li:HOVER .time {
+	display: inline-block;
+}
+.list-container a.note {
+	color: red;
+}
+
+.detail-container {
+	margin: 20px;
+}
+.detail-title {
+	text-align: center;
+}
+.detail-title h3 {
+	color: #259;
+	font-weight: bold;
+}
+.detail-title .note {
+	color: red;
+}
+.detail-title span {
+	color: #999;
+	font-style: italic;
+}
+.detail-content {
+	border-top: 1px dotted #ccc;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	border-bottom: 1px dotted #ccc;
+}

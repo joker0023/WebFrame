@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML>
 <html>
 	<head>
  		<meta charset="utf-8">
@@ -20,7 +21,7 @@
 			}
 			.carousel-ul li {
 				display: block;
-				width: 640px;
+				max-width: 640px;
 				margin-top: 10px;
 				border: 1px solid #ccc;
 				overflow: hidden;
@@ -34,6 +35,12 @@
 			}
 			.control input, .control textarea {
 				margin-bottom: 5px;
+			}
+			.glyphicon-pencil {
+				filter:alpha(opacity=20);
+			}
+			.glyphicon-pencil:HOVER {
+				filter:alpha(opacity=50);
 			}
   		</style>
   	</head>
@@ -52,7 +59,7 @@
 	  					<button type="button" class="close js-close">
 	  						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 	  					</button>
-	  					<button type="button" class="close btn-xs js-edit">
+	  					<button type="button" class="close js-edit">
 	  						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;
 	  					</button>
 	  					<div><img src="${pageContext.request.contextPath}${carousel.pic}" alt=""></div>
