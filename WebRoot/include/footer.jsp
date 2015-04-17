@@ -24,9 +24,16 @@
 	<script src="${pageContext.request.contextPath }/assets/js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function(){
+			var clientHeight = document.documentElement.clientHeight;
+			var height = clientHeight - 130 - 128;
+			$(".main-content").css("min-height", height + "px");
+			
 			if($(".left-menu").length > 0 && $(".right-content").length > 0){
 				if($(".left-menu").height() < $(".right-content").height()){
 					$(".left-menu").height($(".right-content").height());
+				}
+				if($(".left-menu").height() < $(".main-content").height()){
+					$(".left-menu").height($(".main-content").height());
 				}
 			}
 		});

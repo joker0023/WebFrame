@@ -10,7 +10,7 @@
   	<body>
 	  	<%
 	  		request.getRequestDispatcher("/index.do").forward(request, response);
-	  		//response.sendRedirect(request.getContextPath() + "/index.do");
+	  		//request.getRequestDispatcher("/def.jsp").forward(request, response);
 	  	%>
   	</body>
 </html>

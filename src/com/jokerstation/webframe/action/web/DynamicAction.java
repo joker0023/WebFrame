@@ -22,13 +22,18 @@ public class DynamicAction extends BaseAction {
 	public String list() {
 		try{
 			setAttribute("webTitle", "动态列表");
+			String title = request.getParameter("title");
+			if(StringUtils.isBlank(title)){
+				title = null;
+			}
 			DynamicDao dao = new DynamicDao();
-			int count = (int)dao.countLikeTitle(null);
+			int count = (int)dao.countLikeTitle(title);
 			pager.setPageSize(20);
 			pager.setTotalRowsAmount(count);
-			List<Dynamic> list = dao.list(null, pager.getCurrentPage(), pager.getPageSize());
+			List<Dynamic> list = dao.list(title, pager.getCurrentPage(), pager.getPageSize());
 			
 			setAttribute("list", list);
+			setAttribute("title", title);
 		}catch (Exception e) {
 			logger.error("动态列表页出错", e);
 		}

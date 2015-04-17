@@ -9,11 +9,11 @@
 			  		<li class="active">动态</li>
 				</ol>
 				<div class="search-form-container">
-					<form class="form-inline" onsubmit="return false;">
+					<form class="form-inline" action="${pageContext.request.contextPath }/dynamic/list.do" method="post">
 						<div class="form-group">
-							<input type="text" class="form-control">
+							<input type="text" name="title" class="form-control" value="${data.title }">
 						</div>
-						<button class="btn btn-primary">搜索</button>
+						<button type="submit" class="btn btn-primary">搜索</button>
 					</form>
 				</div>
 				<ul class="list-unstyled dynamic-list">

@@ -5,10 +5,21 @@
     <package name="home" namespace="/" extends="struts-default">
         <action name="*" class="com.jokerstation.webframe.action.web.HomeAction" method="{1}">
             <result name="index">/home.jsp</result>
-            <result name="about">/web/about.jsp</result>
-            <result name="product">/web/product.jsp</result>
-            <result name="recruitment">/web/recruitment.jsp</result>
-            <result name="contact">/web/contact.jsp</result>
+            <result name="about">/web/about/about.jsp</result>
+            <result name="product">/web/product/product.jsp</result>
+            <result name="recruitment">/web/recruitment/recruitment.jsp</result>
+            <result name="contact">/web/contact/contact.jsp</result>
+        </action>
+    </package>
+    <package name="web_dynamic" namespace="/dynamic" extends="struts-default">
+        <action name="*" class="com.jokerstation.webframe.action.web.DynamicAction" method="{1}">
+            <result name="list">/web/dynamic/list.jsp</result>
+            <result name="detail">/web/dynamic/detail.jsp</result>
+        </action>
+    </package>
+    <package name="web_recruitment" namespace="/recruitment" extends="struts-default">
+        <action name="*" class="com.jokerstation.webframe.action.web.RecruitmentAction" method="{1}">
+            <result name="detail">/web/recruitment/detail.jsp</result>
         </action>
     </package>
 </struts>

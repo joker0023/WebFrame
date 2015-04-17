@@ -30,7 +30,7 @@
 				</div>
 				
 				<div class="nav-top"></div>
-				<ul class="nav">
+				<ul class="nav my-nav">
 					<li class="first active">
 						<a href="#">首&nbsp;&nbsp;页</a>
 					</li>

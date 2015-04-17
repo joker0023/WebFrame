@@ -26,8 +26,11 @@
     		<div class="header">
     			<div class="header_top">
 					<div class="logo">
-						<a href="${pageContext.request.contextPath }/index.do">
+						<a href="${pageContext.request.contextPath }/">
+							JOKERSTATION
+							<!-- 
 							<img src="${pageContext.request.contextPath }/assets/img/logo.png" />
+							-->
 						</a>
 					</div>
 					<div class="collection">

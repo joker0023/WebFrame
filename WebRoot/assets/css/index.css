@@ -27,7 +27,7 @@ li {
 	background-color: #0a2540;
 }
 .header * {
-	display: none;
+	
 }
 .header_top {
     height: 80px;
@@ -35,6 +35,14 @@ li {
 .logo {
     float: left;
     margin-left: 160px;
+}
+.logo a, .logo a:HOVER {
+	line-height: 80px;
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+	color: #b8e7f9;
 }
 .collection {
     float: right;
@@ -97,7 +105,6 @@ li {
 	min-height: 400px;
 	width: 80%;
 	float: left;
-	padding: 10px;
 }
 .left-menu ul {
 	margin: 0;

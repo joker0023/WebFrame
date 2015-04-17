@@ -2,6 +2,7 @@ package com.jokerstation.webframe.action.web;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.jokerstation.webframe.action.BaseAction;
@@ -9,10 +10,14 @@ import com.jokerstation.webframe.dao.web.AboutDao;
 import com.jokerstation.webframe.dao.web.CarouselDao;
 import com.jokerstation.webframe.dao.web.ContactDao;
 import com.jokerstation.webframe.dao.web.DynamicDao;
+import com.jokerstation.webframe.dao.web.RecruitmentCatDao;
+import com.jokerstation.webframe.dao.web.RecruitmentDao;
 import com.jokerstation.webframe.vo.web.About;
 import com.jokerstation.webframe.vo.web.Carousel;
 import com.jokerstation.webframe.vo.web.Contact;
 import com.jokerstation.webframe.vo.web.Dynamic;
+import com.jokerstation.webframe.vo.web.Recruitment;
+import com.jokerstation.webframe.vo.web.RecruitmentCat;
 
 /**
  * 各大页面的跳转
@@ -99,6 +104,37 @@ public class HomeAction extends BaseAction {
 		try{
 			setAttribute("menu", "recruitment");
 			setAttribute("webTitle", "诚聘英才");
+			
+			String cat = request.getParameter("cat");
+			List<RecruitmentCat> catList = new RecruitmentCatDao().listShow();
+			if(null != catList && catList.size() > 0){
+				RecruitmentCat curCat = null;
+				if(StringUtils.isBlank(cat)){
+					curCat = catList.get(0);
+				}else{
+					for(RecruitmentCat c : catList){
+						if(Integer.valueOf(cat).equals(c.getId())){
+							curCat = c;
+							break;
+						}
+					}
+				}
+				
+				if(null == cat){
+					curCat = catList.get(0);
+				}
+				
+				RecruitmentDao recruitmentDao = new RecruitmentDao();
+				int count = (int)recruitmentDao.countByCat(curCat.getId(), true);
+				pager.setTotalRowsAmount(count);
+				List<Recruitment> list = new RecruitmentDao().listByCat(curCat.getId(), true, pager.getCurrentPage(), pager.getPageSize());
+				
+				setAttribute("catList", catList);
+				setAttribute("curCat", curCat);
+				if(list.size() > 0){
+					setAttribute("list", list);
+				}
+			}
 		}catch (Exception e) {
 			logger.error("跳转招聘页面出错", e);
 		}
