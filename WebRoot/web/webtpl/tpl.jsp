@@ -54,7 +54,7 @@
     		<div class="main-content">
     		
 	    		<div class="index-content">
-	    		
+	    			<h2>页面内容</h2>
 	    		</div>
     		</div>
     		

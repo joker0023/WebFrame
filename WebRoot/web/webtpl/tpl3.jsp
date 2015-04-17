@@ -53,6 +53,12 @@
 			    font-size: 14px;
 			    margin-bottom: 6px;
 			}
+			
+			@media (min-width: 768px) and (max-width: 992px) {
+				#main-menu-collapse .navbar-form {
+  					display: none;
+  				}
+			}
   		</style>
 	</head>
   

@@ -1,0 +1,15 @@
+.marketing {
+	margin-top: 100px;
+}
+.marketing .col-md-4 {
+	text-align: center;
+}
+.pro-content .col-md-5 img {
+	width: 100%;
+}
+.pro-content .col-md-7 {
+	text-align: right;
+}
+.pro-content .col-md-push-5 {
+	text-align: left;
+}
