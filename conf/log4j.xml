@@ -107,7 +107,7 @@
 			<param name="ConversionPattern"
 				value="%d{yyy-MM-dd HH:mm:ss.SSS} [%-5p] - %m%n" />
 		</layout>
-		<filter class="com.jokerstation.webframe.log.MyLogFilter">
+		<filter class="com.jokerstation.base.log.MyLogFilter">
 			<param name="LevelMin" value="20100" />
 			<param name="LevelMax" value="20100" />
 		</filter>

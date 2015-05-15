@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,16 +15,22 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpConnection;
 import org.apache.struts2.components.Password;
 
+import redis.clients.jedis.Jedis;
+
 import com.jokerstation.webframe.data.Data;
-import com.jokerstation.webframe.util.ApiRequestUtils;
-import com.jokerstation.webframe.util.PasswordUtil;
-import com.jokerstation.webframe.util.WebUtil;
 
 public class CommTest {
 
 	public static void main(String[] args) {
 		try{
-			System.out.println(200.0/22 * 8);
+//			Object obj = RedisApi.getWebUser("qiaohe11@163.com");
+//			if(null != obj){
+//				WebUser user = (WebUser)obj;
+//				System.out.println(user.getPassword());
+//				System.out.println(user.getState());
+//			}else{
+//				System.out.println("obj is null");
+//			}
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

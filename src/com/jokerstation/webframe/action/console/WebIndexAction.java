@@ -12,9 +12,9 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
+import com.jokerstation.base.util.Utils;
 import com.jokerstation.webframe.dao.web.CarouselDao;
-import com.jokerstation.webframe.util.Utils;
 import com.jokerstation.webframe.vo.web.Carousel;
 
 /**

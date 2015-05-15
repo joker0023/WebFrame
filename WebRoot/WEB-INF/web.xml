@@ -18,7 +18,7 @@
 	<!-- ENCODING FILTER START -->
 	<filter>
 		<filter-name>EcodingFilter</filter-name>
-		<filter-class>com.jokerstation.webframe.filter.EncodingFilter</filter-class>
+		<filter-class>com.jokerstation.base.filter.EncodingFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>EcodingFilter</filter-name>

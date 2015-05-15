@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
 import com.jokerstation.webframe.dao.web.RecruitmentCatDao;
 import com.jokerstation.webframe.dao.web.RecruitmentDao;
 import com.jokerstation.webframe.vo.web.Recruitment;

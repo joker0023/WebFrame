@@ -12,12 +12,12 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
+import com.jokerstation.base.util.Utils;
 import com.jokerstation.webframe.dao.comm.LinkDao;
 import com.jokerstation.webframe.dao.comm.WebSettingDao;
 import com.jokerstation.webframe.dao.web.PageSettingDao;
 import com.jokerstation.webframe.data.Data;
-import com.jokerstation.webframe.util.Utils;
 import com.jokerstation.webframe.vo.comm.Link;
 import com.jokerstation.webframe.vo.comm.WebSetting;
 import com.jokerstation.webframe.vo.web.PageSetting;

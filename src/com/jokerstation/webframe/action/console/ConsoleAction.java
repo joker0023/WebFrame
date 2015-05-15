@@ -23,8 +23,8 @@ import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
-import com.jokerstation.webframe.action.BaseAction;
-import com.jokerstation.webframe.util.Utils;
+import com.jokerstation.base.action.BaseAction;
+import com.jokerstation.base.util.Utils;
 
 /**
  * 后台基本的action

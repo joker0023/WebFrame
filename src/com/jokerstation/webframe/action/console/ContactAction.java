@@ -2,7 +2,7 @@ package com.jokerstation.webframe.action.console;
 
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
 import com.jokerstation.webframe.dao.web.ContactDao;
 import com.jokerstation.webframe.vo.web.Contact;
 

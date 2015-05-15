@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 
+import com.jokerstation.base.helper.HttpHelper;
+import com.jokerstation.base.log.UserActionLog;
 import com.jokerstation.webframe.dao.console.ActionLogDao;
-import com.jokerstation.webframe.helper.HttpHelper;
-import com.jokerstation.webframe.log.UserActionLog;
 import com.jokerstation.webframe.vo.console.ActionLog;
 import com.jokerstation.webframe.vo.console.ConsoleUser;
 

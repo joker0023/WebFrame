@@ -5,10 +5,10 @@ import java.util.Date;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
+import com.jokerstation.base.util.PasswordUtil;
 import com.jokerstation.webframe.dao.console.ConsoleRoleDao;
 import com.jokerstation.webframe.dao.console.ConsoleUserDao;
-import com.jokerstation.webframe.util.PasswordUtil;
 import com.jokerstation.webframe.vo.console.ConsoleRole;
 import com.jokerstation.webframe.vo.console.ConsoleUser;
 

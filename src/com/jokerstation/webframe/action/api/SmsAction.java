@@ -1,14 +1,10 @@
 package com.jokerstation.webframe.action.api;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
-import com.jokerstation.webframe.data.Data;
-import com.jokerstation.webframe.util.WebUtil;
+import com.jokerstation.base.action.BaseAction;
+import com.jokerstation.base.util.SmsUtil;
 
 /**
  * 对外开放的短信api
@@ -30,11 +26,7 @@ public class SmsAction extends BaseAction {
 			String mobile = request.getParameter("mobile");
 			
 			if(StringUtils.isNotBlank(sendMsg) && StringUtils.isNotBlank(mobile)){
-				Map<String, String> params = new HashMap<String, String>();
-				params.put("apikey", Data.smsAppKey);
-				params.put("mobile", mobile.trim());
-				params.put("text", sendMsg);
-				String result = WebUtil.simpleDoPost(Data.smsApiUrl, params);
+				String result = SmsUtil.sendSms(mobile, sendMsg);
 				setJSONAttribute("sendResut", result);
 				flushJSONData(true);
 			}

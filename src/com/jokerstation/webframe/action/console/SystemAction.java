@@ -9,12 +9,13 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
+import com.jokerstation.base.data.BaseData;
+import com.jokerstation.base.util.DateUtil;
+import com.jokerstation.base.util.PasswordUtil;
 import com.jokerstation.webframe.dao.console.ActionLogDao;
 import com.jokerstation.webframe.dao.console.ConsoleUserDao;
 import com.jokerstation.webframe.data.Data;
-import com.jokerstation.webframe.util.DateUtil;
-import com.jokerstation.webframe.util.PasswordUtil;
 import com.jokerstation.webframe.vo.console.ActionLog;
 import com.jokerstation.webframe.vo.console.ConsoleUser;
 
@@ -101,7 +102,7 @@ public class SystemAction extends BaseAction {
 		
 		RandomAccessFile rf = null;
 		try{
-			String filePath = Data.logWroot + "/" + type + ".log";
+			String filePath = BaseData.logWroot + "/" + type + ".log";
 			
 			String logStr = "";
 			rf = new RandomAccessFile(filePath,"r");
@@ -169,7 +170,7 @@ public class SystemAction extends BaseAction {
 		
 		FileInputStream in = null;
 		try{
-			String filePath = Data.logWroot + "/" + type + ".log";
+			String filePath = BaseData.logWroot + "/" + type + ".log";
 					
 			in = new FileInputStream(filePath);
 			byte[] b = new byte[1024];

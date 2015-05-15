@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
 import com.jokerstation.webframe.dao.web.AboutDao;
 import com.jokerstation.webframe.dao.web.CarouselDao;
 import com.jokerstation.webframe.dao.web.ContactDao;

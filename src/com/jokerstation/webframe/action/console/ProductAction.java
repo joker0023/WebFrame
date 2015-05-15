@@ -2,7 +2,8 @@ package com.jokerstation.webframe.action.console;
 
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
+
 
 /**
  * 产品介绍action

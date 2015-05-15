@@ -3,8 +3,8 @@ package com.jokerstation.webframe.dao.console;
 import java.util.Date;
 import java.util.List;
 
-import com.jokerstation.webframe.dao.BaseDao;
-import com.jokerstation.webframe.util.DateUtil;
+import com.jokerstation.base.dao.BaseDao;
+import com.jokerstation.base.util.DateUtil;
 import com.jokerstation.webframe.vo.console.ActionLog;
 
 /**

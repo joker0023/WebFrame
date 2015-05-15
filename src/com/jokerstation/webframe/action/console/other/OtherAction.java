@@ -2,7 +2,7 @@ package com.jokerstation.webframe.action.console.other;
 
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.action.BaseAction;
+import com.jokerstation.base.action.BaseAction;
 
 /**
  * 其他页面的action

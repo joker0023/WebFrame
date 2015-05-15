@@ -3,7 +3,7 @@ package com.jokerstation.webframe.dao.console;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.jokerstation.webframe.dao.BaseDao;
+import com.jokerstation.base.dao.BaseDao;
 import com.jokerstation.webframe.vo.console.ConsoleUser;
 
 /**

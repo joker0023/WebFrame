@@ -12,9 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 
-import com.jokerstation.webframe.helper.HttpHelper;
-import com.jokerstation.webframe.util.ApiRequestUtils;
+import com.jokerstation.base.helper.HttpHelper;
+import com.jokerstation.base.util.ApiRequestUtils;
 
+/**
+ * api请求过滤
+ * @author Joker
+ *
+ */
 public class ApiFilter implements Filter {
 
 	private static final Logger logger = Logger.getLogger(ApiFilter.class);
